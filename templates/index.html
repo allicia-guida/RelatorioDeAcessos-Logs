@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Logins</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo"> 
+            <img src="/static/image/logo.png" class="img-logo">
+            Relatório de Logins
+        </h1>
+    </header>
+
+    <section class="filtros">
+        <form method="POST" class="form-filtros">
+            <div class="campo">
+                <label for="ordenar">Ordenar por:</label>
+                <select id="ordenar" name="ordenar" class="select-input">
+                    <option value="">--Selecione--</option>
+                    <option value="Nome">Nome</option>
+                    <option value="Data">Data</option>
+                    <option value="Hora">Hora</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="buscar">Buscar nome:</label>
+                <input id="buscar" type="text" name="buscar" class="texto-input" placeholder="Digite o nome">
+            </div>
+
+            <button type="submit" class="btn">Aplicar</button>
+        </form>
+    </section>
+
+    <section class="tabela-container">
+        <div class="tabela-titulo-container">
+            <h2 class="relatorio-titulo">Todos os acessos</h2>
+        </div>
+
+        <table class="tabela">
+            <thead>
+                <tr>
+                    {% for coluna in dados[0].keys() %}
+                        <th class="tabela-cabecalho">{{ coluna }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for linha in dados %}
+                <tr class="tabela-linha">
+                    {% for valor in linha.values() %}
+                        <td class="tabela-dado">{{ valor }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+
+        {% if relatorio %}
+    <section class="relatorio">
+        <h2 class="relatorio-titulo">📈 Análise de Acessos</h2>
+
+        <table class="tabela relatorio-tabela">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Hora</th>
+                    <th>Qtd Acessos</th>
+                    <th>Usuários</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mais acessada</td>
+                    <td>{{ relatorio.hora_mais.hora }}h</td>
+                    <td>{{ relatorio.hora_mais.qtd }}</td>
+                    <td>{{ ', '.join(relatorio.hora_mais.nomes) }}</td>
+                </tr>
+                <tr>
+                    <td>Menos acessada</td>
+                    <td>{{ relatorio.hora_menos.hora }}h</td>
+                    <td>{{ relatorio.hora_menos.qtd }}</td>
+                    <td>{{ ', '.join(relatorio.hora_menos.nomes) }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    {% endif %}
+
+    <footer class="rodape">
+        <p>Desenvolvido por EducaTECH 💻</p>
+    </footer>
+</body>
+</html>

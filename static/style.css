@@ -1,0 +1,217 @@
+/* ==================== */
+/*     ESTILO GERAL     */
+/* ==================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f8fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ==================== */
+/*        HEADER        */
+/* ==================== */
+.header {
+    background-color: #7cbaec;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.titulo {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.img-logo {
+    width: 70px;
+    margin: -10px;
+}
+
+/* ==================== */
+/*       FILTROS        */
+/* ==================== */
+.filtros {
+    background-color: white;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.form-filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.select-input,
+.texto-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 180px;
+    transition: all 0.2s ease;
+}
+
+.select-input:focus,
+.texto-input:focus {
+    outline: none;
+    border-color: #0078D7;
+    box-shadow: 0 0 4px #0078D7;
+}
+
+.btn {
+    background-color: #4da343;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    height: 45px;
+    margin: 20px;
+}
+
+.btn:hover {
+    background-color: #0078D7;
+}
+
+/* ==================== */
+/*       TABELAS         */
+/* ==================== */
+.tabela-container {
+    display: flex;
+    flex-direction: column; /* força título e tabela na vertical */
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.tabela-titulo-container {
+    text-align: center;
+    margin-bottom: 15px; /* espaço entre título e tabela */
+    width: 100%;
+}
+
+.relatorio-titulo,
+.tabela-titulo {
+    font-size: 1.5rem;
+    color: #0781b5;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.descricao-tabela {
+    font-size: 0.95rem;
+    color: #666;
+    display: block;
+}
+
+.tabela {
+    width: 80%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.tabela-cabecalho {
+    background-color: #4da343;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabela-dado {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela-linha:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabela-linha:hover {
+    background-color: #e6f0ff;
+}
+
+/* ==================== */
+/*       RELATÓRIO      */
+/* ==================== */
+.relatorio {
+    margin: 30px auto;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.relatorio-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 15px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.relatorio-tabela th,
+.relatorio-tabela td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.relatorio-tabela thead {
+    background-color: #4da343;
+    color: white;
+}
+
+.relatorio-tabela tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.relatorio-tabela tbody tr:hover {
+    background-color: #e6f0ff;
+}
+
+.texto-relatorio {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* ==================== */
+/*        RODAPÉ        */
+/* ==================== */
+.rodape {
+    text-align: center;
+    padding: 15px;
+    background-color: #0680b36e;
+    color: #424242;
+    font-size: 0.9rem;
+}
