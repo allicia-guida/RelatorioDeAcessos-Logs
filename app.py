@@ -20,7 +20,7 @@ def ler_csv():
 
 
 # -----------------------------
-# FUNÇÕES AUXILIARES
+# FUNÇÕES DO HTML
 # -----------------------------
 def ordenar(dados, coluna):
     """Ordena os dados pela coluna escolhida"""
@@ -37,20 +37,16 @@ def gerar_relatorio(dados):
     if not dados:
         return None
 
-    # Contar quantas vezes cada hora aparece
     contagem_horas = Counter(linha['Hora'].split(':')[0] for linha in dados)
 
-    # Pega a hora mais e menos acessadas
     hora_mais = contagem_horas.most_common(1)[0]
     hora_menos = contagem_horas.most_common()[-1]
 
-    # Agrupar nomes por hora
     nomes_por_hora = defaultdict(list)
     for linha in dados:
         hora = linha['Hora'].split(':')[0]
         nomes_por_hora[hora].append(linha['Nome'])
 
-    # Retorna o relatório em formato de dicionário (para o HTML)
     return {
         "hora_mais": {
             "hora": hora_mais[0],

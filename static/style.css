@@ -1,6 +1,4 @@
-/* ==================== */
-/*     ESTILO GERAL     */
-/* ==================== */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f8fa;
@@ -9,9 +7,6 @@ body {
     color: #333;
 }
 
-/* ==================== */
-/*        HEADER        */
-/* ==================== */
 .header {
     background-color: #7cbaec;
     color: white;
@@ -30,9 +25,7 @@ body {
     margin: -10px;
 }
 
-/* ==================== */
-/*       FILTROS        */
-/* ==================== */
+
 .filtros {
     background-color: white;
     margin: 20px auto;

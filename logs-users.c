@@ -15,14 +15,11 @@ int main(void) {
         "Larissa","Melissa","Julia","Roberta","Clara","Chaulim"
     };
 
-    /* Cabeçalho CSV */
     fprintf(arquivo, "Nome,IP,Data,Hora\n");
 
-    /* seed com algo mais variado */
     srand((unsigned)(time(NULL) ^ (uintptr_t)&arquivo ^ (unsigned)clock()));
 
     time_t agora = time(NULL);
-    /* inicio = agora - 30 dias */
     time_t inicio = agora - (time_t)(30LL * 24LL * 60LL * 60LL);
     long long range = (long long)(agora - inicio); /* número de segundos no intervalo */
 
@@ -33,16 +30,15 @@ int main(void) {
     }
 
     for (int i = 0; i < 20; ++i) {
-        /* Gera número aleatório 64-bit usando várias chamadas a rand() */
         long long a = ((long long)rand() & 0x7FFF);
         long long b = ((long long)rand() & 0x7FFF);
         long long c = ((long long)rand() & 0x7FFF);
-        long long combined = (a << 30) ^ (b << 15) ^ c; /* bastante entropia */
+        long long combined = (a << 30) ^ (b << 15) ^ c; 
         if (combined < 0) combined = -combined;
-        long long offset = combined % (range + 1); /* 0 .. range */
+        long long offset = combined % (range + 1); 
 
         time_t t = inicio + (time_t)offset;
-        struct tm tm_info = *localtime(&t); /* copia segura do resultado */
+        struct tm tm_info = *localtime(&t);
 
         char data[16], hora[8];
         strftime(data, sizeof(data), "%d-%m-%Y", &tm_info);
